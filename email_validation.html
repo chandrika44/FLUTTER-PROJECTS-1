@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EMAIL</title>
+</head>
+
+<body>
+    <form name="myForm" onsubmit="return emailValidate()" style="margin: 100px;">
+        EMAIL:<input type="text" name="email"><br />
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        function emailValidate() {
+            var email = document.myForm.email.value;
+            var atPosition = email.indexOf("@");
+            var dotPosition = email.lastIndexOf(".");
+            if (atPosition < 1 || dotPosition < atPosition + 2 || dotPosition + 2 >= email.length) {
+                alert("PLEASE ENTER THE VALID EMAIL ADDRESS \n atPosition" + atPosition + "\ndotPosition" + dotPosition);
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
